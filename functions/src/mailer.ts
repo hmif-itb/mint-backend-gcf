@@ -1,7 +1,7 @@
 import { FinishedSession } from "./entities";
 import sendgridMail from '@sendgrid/mail';
 import * as functions from 'firebase-functions';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 const generateColors = require('./colorgenerator');
 
@@ -21,7 +21,7 @@ export async function sendInterviewSummaryEmail(email: string, interviewerNotes:
             interviewee_name: intervieweeName,
             interviewer_name: interviewerName,
             interview_type: interviewName,
-            interview_date: moment().format('DD MMM YYYY, HH:mm'),
+            interview_date: `${moment().tz("Asia/Jakarta").format('DD MMM YYYY, HH:mm')} WIB`,
             interview_duration: secondsToHms(timeElapsed),
             pie_html: generatePieHtml(finishedSession),
             interviewer_notes_html: interviewerNotes
