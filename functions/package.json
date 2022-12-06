@@ -29,7 +29,7 @@
     "firebase-admin": "^8.6.0",
     "firebase-functions": "^3.3.0",
     "moment-timezone": "^0.5.27",
-    "qs": "^6.9.1",
+    "qs": "^6.9.7",
     "randomcolor": "^0.5.4",
     "uuid": "^3.4.0"
   },
